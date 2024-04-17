@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": "2",
+      "name": "Akmal",
+      "group": "N44",
+      "sur": "Diyorov",
+      "level": "junior"
+    },
+    {
+      "id": "3",
+      "name": "Ja'farxon",
+      "group": "N45",
+      "sur": "Saidumarov",
+      "level": "senior"
+    },
+    {
+      "id": "4",
+      "name": "Alisher",
+      "group": "N45",
+      "sur": "Bobomurodov",
+      "level": "middle"
+    },
+    {
+      "id": "5",
+      "name": "Azim",
+      "group": "N45",
+      "sur": "Narzullayev",
+      "level": "junior"
+    },
+    {
+      "id": "7",
+      "name": "Ja'farxon",
+      "group": "N44",
+      "sur": "Saidumarov",
+      "level": "middle"
+    },
+    {
+      "id": "06ce",
+      "name": "dasdadad",
+      "sur": "asdadsadsa"
+    },
+    {
+      "name": "dsadasdas",
+      "sur": "dasdas",
+      "id": "bb31"
+    },
+    {
+      "id": "bbe7",
+      "name": "dasdas",
+      "sur": "dasd"
+    },
+    {
+      "id": "3db6",
+      "name": "fsfsdfds",
+      "sur": "fdsfds"
+    },
+    {
+      "id": "8e3c",
+      "name": "fdsfdsf",
+      "sur": "dsfdsf"
+    }
+  ]
+}

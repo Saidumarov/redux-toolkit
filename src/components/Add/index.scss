@@ -1,0 +1,51 @@
+.add {
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  .form {
+    width: 30%;
+    label {
+      padding-left: 20px;
+      padding-bottom: 5px;
+      display: block;
+    }
+    input {
+      width: 90%;
+      outline: none;
+      height: 50px;
+      border-radius: 8px;
+      padding-left: 20px;
+      font-size: 17px;
+      border: none;
+    }
+  }
+
+  .form div {
+    width: 90%;
+    height: 48px;
+  }
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    width: 100%;
+    .form {
+      width: 100% !important;
+      margin-top: 30px;
+      margin-left: 0 !important ;
+    }
+    .form div {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .add {
+    flex-wrap: wrap;
+
+    .form {
+      width: 100%;
+      padding-top: 20px;
+    }
+  }
+}
