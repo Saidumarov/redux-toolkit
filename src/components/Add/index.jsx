@@ -22,7 +22,7 @@ const Add = () => {
   const onSubmit = (data) => {
     axios.post("http://localhost:3000/data", data).then((res) => {
       navegate("/");
-      toast.success("Added successfully");
+      toast.success(" User Added successfully");
       setUserData(res.data);
     });
   };

@@ -31,7 +31,7 @@ const Edit = () => {
   const onSubmit = async (data) => {
     try {
       await axios.put(`http://localhost:3000/data/${id}`, data);
-      toast.success("Edit successfully");
+      toast.success(" User Edit successfully");
       navegate("/");
       setUserData(data);
     } catch (error) {

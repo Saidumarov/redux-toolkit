@@ -1,47 +1,42 @@
+import { useEffect } from "react";
 import { Container } from "@mui/material";
+import "./index.scss";
 import { Button } from "antd";
 import axios from "axios";
-import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Edit, { Delete } from "../../constants";
 import { toast } from "react-toastify";
 import "./index.scss";
 import LoadingProduct from "../../loading";
 import { useSelector, useDispatch } from "react-redux";
-
-import { fetchTeachers } from "../../redux/actions/teachersActions";
 import { Users } from "../../provider";
-
+import { fetchData } from "../../redux/data";
 export default function List() {
-  const navegate = useNavigate();
-  const { teachers, loading, error } = useSelector((state) => state.teachers);
+  const navigate = useNavigate();
+  const { data, loading, error } = useSelector((state) => state.data);
   const dispatch = useDispatch();
-  const { userData } = useContext(Users);
 
-  //   the teacher
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch, Users]);
+
   const deleteAdd = (id) => {
-    if (window.confirm("Delete Teacher ?")) {
+    if (window.confirm("Delete Teacher?")) {
       axios
         .delete(`http://localhost:3000/data/${id}`)
-        .then((res) => {
-          toast.success("Delete successfully ");
+        .then(() => {
+          toast.success("User deleted successfully");
           dispatch(fetchTeachers());
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          console.error("Error deleting teacher:", error);
         });
     }
   };
 
-  //  Edit the teacher
   const edit = (id) => {
-    navegate(`/edit/${id}`);
+    navigate(`/edit/${id}`);
   };
-
-  // fetch data
-  useEffect(() => {
-    dispatch(fetchTeachers());
-  }, [dispatch, userData]);
 
   return (
     <Container>
@@ -52,7 +47,7 @@ export default function List() {
             id="addT1"
             className="addT"
             type="primary"
-            onClick={() => navegate("/add")}
+            onClick={() => navigate("/add")}
           >
             Add
           </Button>
@@ -65,8 +60,8 @@ export default function List() {
           <p>Last</p>
           <p>Action</p>
         </div>
-        {teachers && teachers
-          ? teachers?.map((el, index) => (
+        {data && data
+          ? data?.map((el, index) => (
               <div className="tr1" key={index}>
                 <p>{index + 1}</p>
                 <p>{el?.name}</p>
